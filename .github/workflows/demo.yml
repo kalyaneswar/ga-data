@@ -17,7 +17,7 @@ jobs:
         # Cache node modules
         with: 
           # Specify the cache   
-          path: ~/.npm
+          path: node_modules
           # key means unique identifier for the cache
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
@@ -39,7 +39,7 @@ jobs:
         # Cache node modules
         with: 
           # Specify the cache   
-          path: ~/.npm
+          path: node_modules
           # key means unique identifier for the cache
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
