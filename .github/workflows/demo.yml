@@ -61,6 +61,7 @@ jobs:
       - name: List files
         run: ls -la
       - name: output js file name
-        run: echo "${{ needs.read-file-name-and-publish.outputs.js-file-name }}"
+        # run: echo "${{ needs.read-file-name-and-publish.outputs.js-file-name }}"
+        run: echo "The JS file is: ${{ needs.read-file-name-and-publish.outputs.js-file-name }}"
       - name: Deploy
         run: echo "Deploying..."
