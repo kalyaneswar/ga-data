@@ -47,7 +47,7 @@ jobs:
         run: npm run build
       - name: Publish JS file name
         id: publish-js-file
-        run: find dist/assets/*.js -type f -execdir echo 'file_name{}' >> GITHUB_OUTPUT ';'
+        run: find dist/assets/*.js -type f -execdir echo 'file_name{}' >> $GITHUB_OUTPUT ';'
          
 
   deploy:
