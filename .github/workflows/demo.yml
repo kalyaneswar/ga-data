@@ -34,6 +34,8 @@ jobs:
           #   dist
           #   package.json
   read-file-name-and-publish:
+    outputs:
+      js-file-name: ${{ steps.publish-js-file.outputs.file_name }}
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -44,7 +46,8 @@ jobs:
       - name: Build website
         run: npm run build
       - name: Publish JS file name
-        run: find dist/assets/*.js -type f -execdir echo '{}' ';'
+        id: publish-js-file
+        run: find dist/assets/*.js -type f -execdir echo 'file_name{}' >> GITHUB_OUTPUT ';'
          
 
   deploy:
