@@ -51,7 +51,7 @@ jobs:
          
 
   deploy:
-    needs: build
+    needs: [build, read-file-name-and-publish]
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifacts
